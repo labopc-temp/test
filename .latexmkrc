@@ -4,7 +4,7 @@
 $out_dir = 'out';
 
 # Create output directory if it does not exist
-system('mkdir', '-p', $out_dir);
+-d $out_dir or mkdir $out_dir or die "Cannot create $out_dir: $!";
 
 # upLaTeX
 $latex = 'uplatex %O -kanji=utf8 -no-guess-input-enc -synctex=1 -interaction=nonstopmode -file-line-error %S';
